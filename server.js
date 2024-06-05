@@ -1,11 +1,14 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 3000;
 app.use(express.json());
+app.use(cors());
 
 app.post('/api/login', (req, res) => {
+  console.log(req);
   const { username, password } = req.body;
-  if (username === 'admin' && password === 'password123') {
+  if (username === 'admin' && password === 'pa123') {
     res.json({ token: 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImlhdCI6MTY1OTk0NDMyMiwiZXhwIjoxNjU5OTUyODMyfQ.5-6F0o-zV3z0_a_a_0_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a_a' });
   } else {
     res.status(401).json({ error: 'Credenziali errate' });

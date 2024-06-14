@@ -41,7 +41,7 @@ app.get('/shops/:id', (req, res) => {
 app.post('/shops', (req, res) => {
 
   const newShop = req.body;
-  
+
   fs.readFile(path.join(process.cwd(), 'data', 'shops.json'), (err, data) => {
     if (err) throw err;
     let shops = JSON.parse(data);

@@ -59,12 +59,8 @@ app.post('/shops', (req, res) => {
     });
 
 });
-  
-
 
 })
-
-
 
 
 
